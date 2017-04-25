@@ -24,7 +24,7 @@ class AddAuditEntityCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('simplethings_entityaudit.config')) {
+        if (!$container->hasDefinition('simplethings_entityaudit.config') || !$container->hasDefinition('simplethings.entityaudit.audited_entities')) {
             return;
         }
 
